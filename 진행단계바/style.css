@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Dokdo&family=Gugi&family=Hi+Melody&family=Roboto&display=swap');
+
+/* CSS의 변수 : 색깔 등을 자주 사용할 경우 변수 설정 */
+:root {
+  --line-fill: #3498db;
+  --line-empty: #e0e0e0;
+}
+
+/* 전체 태그에 적용 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f6f7fb;
+  font-family: 'Muli', sans-serif;
+  display: flex; /* 하위 태그들을 정렬 */
+  justify-content: center; /* 가로방향 정렬 */
+  align-items: center; /* 세로방향 정렬 */
+  height: 100vh; /* vh는 화면의 % */
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative; /* 기준 */
+  margin-bottom: 30px;
+  min-width: 350px;
+}
+
+/* progress bar 진행상태 바 */
+.progress-container::before {
+  /* ::before는 그 태그 앞에 */
+  content: '';
+  background-color: var(--line-empty);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%); /* 가운데 보정 */
+  height: 4px;
+  width: 100%;
+  z-index: -1; /* 겹쳤을 때 기본 z인덱스는 0 */
+}
+
+.progress {
+  background-color: var(--line-fill);
+  position: absolute; /* 기준에 따라 위치 */
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%); /* 가운데 보정 */
+  height: 4px;
+  width: 0%; /* 자바스크립트로 변경 */
+  z-index: -1; /* 겹쳤을 때 기본 z인덱스는 0 */
+  transition: all 0.4s ease;
+}
+
+.circle {
+  background-color: white;
+  color: #999; /* 헥사 16진수 #FFF = #FFFFFF 흰색, #999 => #000000 검은색 */
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--line-empty);
+  transition: all 0.4s ease; /* 모든 css변화는 0.4s로 천천히 */
+}
+
+/* circle과 active 클래스가 동시에 있을 경우 */
+.circle.active {
+  border-color: var(--line-fill);
+}
+
+.btn {
+  background-color: var(--line-fill);
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 8px 30px; /* padding, margin 2개 일 때, 1.위아래, 2.좌우 */
+  margin: 5px;
+  font-size: 14px;
+}
+
+.btn:active {
+  transform: scale(0.98); /* 버튼을 누르면 active => 사이즈를 98% */
+}
+
+.btn:focus {
+  outline: 0; /* 보기 좋게 아웃라인 제거 */
+}
+
+.btn:disabled {
+  background-color: var(--line-empty);
+  cursor: not-allowed;
+}

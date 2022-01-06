@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- 미디어쿼리 사용 또는 vw, vh를 사용하기 위해 필요함 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>내 프로젝트</title>
+  </head>
+  <body>
+    <!-- 컨테이너 클래스로 wrap(포장) -->
+    <div class="container">
+      <!-- 스타일 속성은 자주 쓰진 않지만 여러 이미지를 넣을 경우 더 편함 -->
+      <div
+        class="panel"
+        style="
+          background-image: url('https://cdn.pixabay.com/photo/2020/03/05/17/07/montserrat-4904951_960_720.jpg');
+        "
+      >
+        <h3>바르셀로나</h3>
+      </div>
+      <div
+        class="panel active"
+        style="
+          background-image: url('https://cdn.pixabay.com/photo/2019/11/25/06/41/market-4651117_960_720.jpg');
+        "
+      >
+        <h3>비엔나</h3>
+      </div>
+      <div
+        class="panel"
+        style="
+          background-image: url('https://cdn.pixabay.com/photo/2021/09/28/19/42/uskudar-6665402_960_720.jpg');
+        "
+      >
+        <h3>위스키다르</h3>
+      </div>
+      <div
+        class="panel"
+        style="
+          background-image: url('https://cdn.pixabay.com/photo/2021/12/11/15/06/northern-lights-6862969_960_720.jpg');
+        "
+      >
+        <h3>노르웨이</h3>
+      </div>
+      <div
+        class="panel"
+        style="
+          background-image: url('https://cdn.pixabay.com/photo/2021/12/05/11/22/vinpearl-land-6847412_960_720.jpg');
+        "
+      >
+        <h3>빈펄랜드</h3>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
