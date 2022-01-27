@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>jQuery - 셀렉터</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <script src="js/jquery-3.6.0.min.js"></script> -->
+    <style>
+      body {
+        font-size: 17px;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f4f4;
+        line-height: 1.5em;
+      }
+      header {
+        background: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 4px solid black;
+        margin-bottom: 10px;
+      }
+      #container {
+        width: 90%;
+        margin: auto;
+        padding: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>jQuery 시작하기</h1>
+    </header>
+    <div id="container">
+      <h1 id="heading1">Heading One</h1>
+      <p id="para1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione autem cum sapiente nam quam commodi magnam consequuntur <span>nihil</span> consequatur, rem iusto aperiam.
+        Velit fugiat tenetur adipisci, officia culpa totam
+      </p>
+      <h1 class="heading2">Heading Two</h1>
+      <p class="para2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione autem cum sapiente nam quam commodi magnam consequuntur corporis nihil consequatur,<span>rem</span> iusto
+        aperiam. Velit fugiat tenetur adipisci, officia culpa totam
+      </p>
+      <ul id="list">
+        <li>리스트 아이템</li>
+        <li>리스트 아이템</li>
+        <li>리스트 아이템</li>
+        <li>리스트 아이템</li>
+        <li>리스트 아이템</li>
+        <li>리스트 아이템</li>
+        <li>리스트 아이템</li>
+        <li>리스트 아이템</li>
+      </ul>
+      <!-- input 태그 -->
+      <input type="button" value="버튼" />
+      <input type="submit" value="전송" />
+      <input type="text" />
+    </div>
+
+    <script>
+      // jQuery를 사용해보기, 태그선택 $('선택자')
+      //   $('h1').hide(); // h1태그들을 찾아서 hide() 안보이게 숨김
+      //   $('h1#heading1').hide(); // id숨김(#)
+      //   $('h1.heading2').hide(); // class숨김(.)
+      $('p span').css('color', 'red');
+      $('ul#list li:even').css('background-color', 'yellowgreen');
+      $('ul#list li:odd').css('background-color', 'pink');
+      $('ul#list li:nth-child(3').css('list-style', 'none');
+      $('input:button').hide();
+    </script>
+  </body>
+</html>

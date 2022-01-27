@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON 웹에서 사용</title>
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+  </head>
+  <body>
+    <h1>JSON 웹에서 사용</h1>
+    <div id="output"></div>
+    <script>
+      // https://randomuser.me/api/
+      const data =
+        '{"results":[{"gender":"male","name":{"title":"Mr","first":"Felix","last":"Møller"},"location":{"street":{"number":320,"name":"Højdedraget"},"city":"Kvistgaard","state":"Danmark","country":"Denmark","postcode":42248,"coordinates":{"latitude":"-35.2095","longitude":"-116.5856"},"timezone":{"offset":"-3:30","description":"Newfoundland"}},"email":"felix.moller@example.com","login":{"uuid":"49505625-13e8-4284-8ff6-dbb6c30d3b46","username":"yellowgorilla880","password":"watcher","salt":"en6FlHrr","md5":"f8eae253986abcc584fd88b2cead553d","sha1":"153f55943f723d847c686699ca26e000db9968c3","sha256":"01a48c1970dc0a47da60df90533329016382c73f2d8d33832b2ed75aee38196b"},"dob":{"date":"1983-05-15T23:27:24.110Z","age":39},"registered":{"date":"2014-05-08T16:48:27.159Z","age":8},"phone":"71082723","cell":"78028066","id":{"name":"CPR","value":"150583-4333"},"picture":{"large":"https://randomuser.me/api/portraits/men/43.jpg","medium":"https://randomuser.me/api/portraits/med/men/43.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/men/43.jpg"},"nat":"DK"}],"info":{"seed":"b556c778b38f2a2f","results":1,"page":1,"version":"1.3"}}';
+      // JSON 데이터를 변환
+      const dataJSON = JSON.parse(data);
+      const person = dataJSON.results[0];
+      const output = document.getElementById('output');
+
+      var html = person.name.first + '  ' + person.name.last;
+      html += '<img src="' + person.picture.thumbnail + '">';
+      output.innerHTML = html;
+
+      // 만약 가공한 데이터를 다시 전달할 때, 또 JSON으로 변환
+      var strMe = JSON.stringify(dataJSON);
+      console.log(strMe);
+    </script>
+  </body>
+</html>
